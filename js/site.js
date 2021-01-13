@@ -5,30 +5,29 @@ const output = document.querySelector('#output');
 
 fearsForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  output.innerHTML = findSum();
+  output.innerHTML = findSolution();
 })
 
-const findSum = () => {
-  for (let i = 0; i < numInputs.length; i++) {
-    let num1 = parseInt(numInputs[i].value);
-    let num2;
-
-
-    for (let j = 0; j < numInputs.length; j++) {
-      num2 = parseInt(numInputs[j].value)
-      
-      // Check for valid input
-      if (!Number.isInteger(num2))
-      {
-        return 'Please enter numbers only.'
-      }
-      
-      // Check sum
-      if (num1 + num2 === parseInt(sum.value)) {
-        return `${num1} + ${num2} = ${sum.value}`;
-      }
-    }
-  }
-  return 'No matching sum could be found.'
+// parse inputs to num and return results as array
+const parseInputToNum = () => {
+  return [...numInputs].map(index => parseInt(index.value));
 }
 
+const findSolution = () => {
+  const numberArray = parseInputToNum();
+  console.log(numberArray);
+  const solutionArray = [];
+  
+    numberArray.forEach(num1 => {
+      numberArray.forEach(num2 => {
+
+        // Check sum
+        if (num1 + num2 === parseInt(sum.value)) {
+          console.log('yes');
+          solutionArray.push(`${num1} + ${num2} = ${sum.value}`);
+        }
+      })
+    })
+
+  return solutionArray.length > 0 ? solutionArray : 'No matching sum could be found.';
+};
