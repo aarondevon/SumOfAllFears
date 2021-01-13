@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/prism.css">
     <!-- site css -->
     <link rel="stylesheet" href="css/site.css" />
-    <title>TacoCat</title>
+    <title>Sum Of All Fears | Code</title>
   </head>
   <body>
     <div class="container">
@@ -46,13 +46,45 @@
       <!-- Jumbotron section -->
       <div class="jumbotron jumbotron">
         <div class="container">
-          <h1 class="display-3">TacoCat</h1>
+          <h1 class="display-3">Sum Of All Fears</h1>
           <figure>
             <!-- <figcaption>Your code title</figcaption> -->
             <pre data-src="js/site.js" data-download-link>
-              <code class="code language-javascript line-numbers">
-                
-              </code>
+<code class="code language-javascript line-numbers">
+  const fearsForm = document.querySelector('#fears-form');
+  const numInputs = document.querySelectorAll('.numInput');
+  const sum = document.querySelector('#sum');
+  const output = document.querySelector('#output');
+
+  fearsForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    output.innerHTML = findSum();
+  })
+
+  const findSum = () => {
+    for (let i = 0; i < numInputs.length; i++) {
+      let num1 = parseInt(numInputs[i].value);
+      let num2;
+
+
+      for (let j = 0; j < numInputs.length; j++) {
+        num2 = parseInt(numInputs[j].value)
+        
+        // Check for valid input
+        if (!Number.isInteger(num2))
+        {
+          return 'Please enter numbers only.'
+        }
+        
+        // Check sum
+        if (num1 + num2 === parseInt(sum.value)) {
+          return `${num1} + ${num2} = ${sum.value}`;
+        }
+      }
+    }
+    return 'No matching sum could be found.'
+  }
+</code>
             </pre>
           </figure>
           <hr class="my-5" />
