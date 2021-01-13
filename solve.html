@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/site.css" />
-    <title>TacoCat</title>
+    <title>Sum Of All Fears | Solve</title>
   </head>
   <body>
     <div class="container">
@@ -41,59 +41,111 @@
         </div>
       </nav>
       <!-- Jumbotron section -->
-      <div class="jumbotron jumbotron">
+      <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Sum Of All Fears</h1>
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="display-3">Sum Of All Fears</h1>
+            </div>
+          </div>
+
           <!-- <img src="img/TacoCat.jpg" alt="Taco cat" /> -->
           <!-- <p class="lead">Jumbo helper text</p> -->
-          <form id="fearsForm">
-            <div class="form-group">
-              <label for="input1">First Number</label>
-              <input type="number" id="input1" class="form-control" required />
+          <div class="row">
+            <div class="col">
+              <div id="form-container">
+                <form id="fears-form">
+                  <div class="form-group">
+                    <label for="input1">First Number</label>
+                    <input
+                      type="number"
+                      id="input1"
+                      class="form-control numInput"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="input2">Second Number</label>
+                    <input
+                      type="number"
+                      id="input2"
+                      class="form-control numInput"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="input3">Third Number</label>
+                    <input
+                      type="number"
+                      id="input3"
+                      class="form-control numInput"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="input4">Fourth Number</label>
+                    <input
+                      type="number"
+                      id="input4"
+                      class="form-control numInput"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="input5">Fifth Number</label>
+                    <input
+                      type="number"
+                      id="input5"
+                      class="form-control numInput"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="sum">Desired Sum</label>
+                    <input
+                      type="number"
+                      id="sum"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Check
+                  </button>
+                </form>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="input1">Second Number</label>
-              <input type="number" id="input1" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="input1">Third Number</label>
-              <input type="number" id="input1" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="input1">Fourth Number</label>
-              <input type="number" id="input1" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="input1">Fifth Number</label>
-              <input type="number" id="input1" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="input1">Desired Sum</label>
-              <input type="number" id="input1" class="form-control" required />
-            </div>
-            <button type="submit" class="btn btn-dark btn-lg">Check</button>
-          </form>
+          </div>
           <br />
           <br />
-          <p id="output"></p>
+          <div class="row">
+            <div class="col">
+              <p id="output"></p>
+            </div>
+          </div>
+
           <hr class="my-5" />
-          <!-- <p>More info</p> -->
-          <p class="lead">
-            <a
-              class="btn btn-primary btn-lg"
-              href="https://www.aarondevon.com/"
-              target="_blank"
-              role="button"
-              >Portfolio</a
-            >
-            <a
-              class="btn btn-primary btn-lg"
-              href="https://github.com/aarondevon/TacoCat"
-              target="_blank"
-              role="button"
-              >GitHub</a
-            >
-          </p>
+          <div class="row">
+            <div class="col text-center">
+              <!-- <p>More info</p> -->
+              <p class="lead">
+                <a
+                  class="btn btn-primary btn-lg"
+                  href="https://www.aarondevon.com/"
+                  target="_blank"
+                  role="button"
+                  >Portfolio</a
+                >
+                <a
+                  class="btn btn-primary btn-lg"
+                  href="https://github.com/aarondevon/TacoCat"
+                  target="_blank"
+                  role="button"
+                  >GitHub</a
+                >
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
