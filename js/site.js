@@ -5,7 +5,7 @@ const output = document.querySelector('#output');
 
 fearsForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  output.innerHTML = findSolution();
+  printSolution();
 })
 
 // parse inputs to num and return results as array
@@ -23,7 +23,6 @@ const findSolution = () => {
 
         // Check sum
         if (num1 + num2 === parseInt(sum.value)) {
-          console.log('yes');
           solutionArray.push(`${num1} + ${num2} = ${sum.value}`);
         }
       })
@@ -31,3 +30,15 @@ const findSolution = () => {
 
   return solutionArray.length > 0 ? solutionArray : 'No matching sum could be found.';
 };
+
+const printSolution = () => {
+  output.innerHTML = '';
+  const solution = findSolution();
+  if (Array.isArray(solution)) {
+    solution.forEach(result => {
+      output.innerHTML += `<p>${result}</p>`;
+    })
+  } else {
+    output.innerHTML = `<p>${solution}</p>`;
+  }
+}
